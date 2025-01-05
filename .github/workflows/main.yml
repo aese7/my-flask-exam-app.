@@ -3,7 +3,7 @@ name: Deploy to Heroku
 on:
   push:
     branches:
-      - main  # Ensure this matches your branch name
+      - main
 
 jobs:
   deploy:
@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Deploy to Heroku
-        uses: appleboy/heroku-action@master
+        uses: amanusk/deploy-to-heroku@v1.0.0
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
